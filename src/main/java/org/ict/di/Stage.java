@@ -1,15 +1,21 @@
 package org.ict.di;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Stage {
 	
-	@Autowired
+//	@Autowired
 	private Singer singer;
 	
-	public Stage(Singer singer) {
+	//생성자 주입 막음
+//	public Stage(Singer singer) {
+//		this.singer = singer;
+//	}
+	
+	//세터 주입 설정
+	public void setSinger(Singer singer) {
 		this.singer = singer;
 	}
 	

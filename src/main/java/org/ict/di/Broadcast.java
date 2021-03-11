@@ -1,9 +1,9 @@
 package org.ict.di;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Broadcast {
 	//생성하는데 Stage를 필요로 하도록 설정해주세요.
 	//bradcast() 메소드는 방송 송출용 이라는 문장 뒤에

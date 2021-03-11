@@ -8,7 +8,8 @@ public class JavaMain {
 		//방송무대도 구현해주세요.
 		
 		Singer singer = new Singer();
-		Stage stage = new Stage(singer);
+//		Stage stage = new Stage(singer);
+		Stage stage = new setSinger(singer);
 		Broadcast broadcast = new Broadcast(stage);
 		
 		broadcast.broad();

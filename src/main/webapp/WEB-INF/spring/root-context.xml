@@ -7,6 +7,33 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<context:component-scan base-package="org.ict.di" />
+	<!-- Hikari-cp -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ict3?serverTimezone=UTC" />
+		<property name="username" value="root" />
+		<property name="password" value="1111" />
+	</bean>
+	
+	<!-- 객체 생성 테스트 -->
+	<bean id="gasu" class="org.ict.di.Singer"></bean>
+	
+	<bean id="musiccenter" class="org.ict.di.Stage">
+<!-- 		<constructor-arg ref="gasu" /> -->
+		<property name="singer" ref="gasu" />
+	</bean>
+	
+	<bean id="mbc" class="org.ict.di.Broadcast">
+		<constructor-arg ref="musiccenter" />
+	</bean>
+	<!-- /객체 생성 테스트 -->
 
 	<!-- MySQL dataSource -->
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<constructor-arg ref="hikariConfig" />
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 </beans>
