@@ -9,11 +9,8 @@ public class JavaMain {
 		
 		Singer singer = new Singer();
 //		Stage stage = new Stage(singer);
-		Stage stage = new setSinger(singer);
-		Broadcast broadcast = new Broadcast(stage);
+//		Broadcast broadcast = new Broadcast(stage);
 		
-		broadcast.broad();
-		stage.perform();
-		singer.sing();
+//		broadcast.broad();
 	}
 }
